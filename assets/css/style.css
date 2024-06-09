@@ -1,49 +1,36 @@
 :root {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    --color-a: #123c69;
-    --color-b: #ac3b61;
-    --color-c: #edc7b7; 
-    --color-d: #eee2dc;
-    --color-e: #bab2b5;
+    --tan: #fff5d7;
+    --yellow: #feb300;
+    --pink: #ff5e6c; 
+    --pink-leaf: #ffaaab;
 }
 
 * {
     box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
 }
 
 body {
-    background-color: var(--color-d);
+    background-color: var(--tan);
 }
 
-ul {
+ul, nav ul, .contact ul {
     list-style-type: none;
 }
 
 a {
     text-decoration: none;
     font-size: 25px;
+    color: black;
   }
 
-a:hover {
-    color: var(--color-b);
-    border-bottom: 1px solid var(--color-b);
-    cursor: pointer;
-  }
-
-  body {
-    font-family: var(--font-family);
-  }
-
-  nav {
+nav, .contact-container {
     display: flex;
-    position: sticky;
-    z-index: 1;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--color-c);
+    background-color: var(--pink);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-    color: var(--color-a);
-  }
+}
 
   nav h1 {
     font-size: 32px;
@@ -55,12 +42,13 @@ a:hover {
 
   }
 
-  li {
-    font-size: 20px;
-    font-weight: 600;
+  nav a:hover, .contact a:hover {
+    color: var(--pink-leaf);
+    border-bottom: 2px solid var(--pink-leaf);
+    cursor: pointer;
   }
 
-  ul {
+  nav ul, .contact-container ul {
     display:flex;
     gap: 1.5em;
   }
@@ -76,16 +64,16 @@ a:hover {
 
   .profile-pic {
     height: 35rem;
-    border: 2px solid var(--color-b);
+    border: 2px solid var(--pink-leaf);
     border-radius: 20px;
     margin-top: 5rem;
   }
 
-  .about-container {
+  .about-container, .project-container {
     padding: 2rem;
-    box-shadow: 2px 2px 10px var(--color-b);
+    box-shadow: 5px 5px 10px var(--pink);
     border-radius: 5px;
-    background-color: var(--color-e);
+    background-color: var(--pink-leaf);
   }
 
   .about-heading {
@@ -97,11 +85,11 @@ a:hover {
   }
 
   hr {
-    border: 1px solid var(--color-a)
+    border: 1px solid var(--yellow)
   }
 
   .projects {
-    background-color: var(--color-c);
+    background-color: var(--yellow);
     padding: 30px;
     margin: 2.5rem;
   }
@@ -128,9 +116,9 @@ a:hover {
     text-align: center;
     width: 22rem;
     padding: 2rem;
-    background-color: var(--color-e);
+    background-color: var(--pink-leaf);
     border-radius: 12px;
-    box-shadow: 0 5px 15px var(--color-b);
+    box-shadow: 0 5px 15px var(--pink);
     padding: 25px;
     margin: 25px;
   }
@@ -146,7 +134,7 @@ a:hover {
   }
 
   .project-description {
-    border: 1px outset var(--color-b);
+    border: 1px outset var(--tan);
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   }
@@ -154,3 +142,106 @@ a:hover {
   #project-one {
     width: 75%;
   }
+
+  .contact-header {
+    font-size: 2em;
+  }
+
+  .contact-container ul {
+    gap: 20rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav h1 {
+        font-size: 28px;
+    }
+
+    nav h2 {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        height: 20rem;
+        margin-top: 2rem;
+    }
+
+    .about-container {
+        width: 100%;
+    }
+
+    .project-container {
+        width: 45%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav h1 {
+        font-size: 24px;
+    }
+
+    .project-container {
+        width: 100%;
+    }
+
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        height: 15rem;
+    }
+
+    .about-container {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav h1 {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 18px;
+    }
+
+    .about {
+        padding: 1rem;
+    }
+
+    .about-container {
+        padding: 0.5rem;
+    }
+
+    .profile-pic {
+        height: 10rem;
+    }
+
+    .projects {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .contact-info {
+        margin: 2rem;
+    }
+}
