@@ -152,7 +152,7 @@ nav, .contact-container {
   }
 
   @media screen and (max-width: 992px) {
-    nav {
+    nav, .contact-container {
         flex-direction: column;
     }
 
@@ -164,9 +164,10 @@ nav, .contact-container {
         display: none;
     }
 
-    nav ul {
+    nav ul, .contact-container ul {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
     .about {
@@ -185,11 +186,6 @@ nav, .contact-container {
 
     .project-container {
         width: 45%;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
     }
 }
 
